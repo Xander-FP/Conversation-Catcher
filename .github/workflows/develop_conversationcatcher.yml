@@ -28,9 +28,7 @@ jobs:
         run: npm install yarn -g
         
       - name: yarn install, build, and test
-        run: |
-          yarn install
-          yarn run start api
+        run: yarn install --frozen-lockfile
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
