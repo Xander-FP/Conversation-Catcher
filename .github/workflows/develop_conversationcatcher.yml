@@ -20,12 +20,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '16.x'
-
-      - name: npm install, build, and test
+          
+      - name: install nx
+        run: npm install nx -g
+        
+      - name: install yarn
+        run: npm install yarn -g
+        
+      - name: yarn install, build, and test
         run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+          yarn install
+          yarn run start api --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
