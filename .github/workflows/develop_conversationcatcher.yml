@@ -30,7 +30,7 @@ jobs:
       - name: yarn install, build, and test
         run: |
           yarn install
-          yarn run start api --if-present
+          yarn run start api
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
